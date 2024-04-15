@@ -19,6 +19,8 @@ class HomePage extends StatelessWidget {
       fontWeight: FontWeight.bold,
     );
 
+    final TextEditingController textEditingController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Currency Converter App'),
@@ -41,6 +43,7 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 20.0),
             TextField(
+              controller: textEditingController,
               style: customTextStyle,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
@@ -55,7 +58,8 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                debugPrint('Convert Pressed');
+                // debugPrint('Convert Pressed');
+                debugPrint('$textEditingController.text');
               },
               onLongPress: () {
                 debugPrint('LOOOONG Convert Pressed');
